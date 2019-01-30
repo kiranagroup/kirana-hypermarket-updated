@@ -1,0 +1,59 @@
+div.modal.block{
+    display: block !important;
+    padding-top: 7.5%;
+    background: rgba(0,0,0,0.5);
+}
+
+div.modal-header{
+    border-bottom: none !important;
+    padding: 0 !important;
+}
+
+div.modal-header button.close{
+    cursor: pointer;
+    margin-right: -0.5rem;
+}
+
+div.modal-body{
+    padding-top: 0 !important;
+}
+
+div.modal-body h5{
+  color: black;
+  text-align: center;
+  cursor: default;
+}
+
+div.modal-footer{
+    border-top: none !important;
+    padding-top: 0 !important;
+}
+
+div.modal-footer button{
+    padding: 0.35% 5% !important;
+}
+
+div.modal-footer p {
+  color: lightskyblue;
+  cursor: pointer;
+  display: block;
+}
+
+div.modal input, div.modal select{
+    margin-top: 2.5%;
+    border-radius: 5px;
+    padding: 0 0.5%
+}
+
+div.modal p{
+    margin-bottom: 0;
+    margin-top: 2.5%;
+}
+
+div.modal p.error{
+    color:red;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+}

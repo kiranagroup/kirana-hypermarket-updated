@@ -1,0 +1,23 @@
+@media(max-width:576px){
+    div.pad h2.centerIt{
+        font-size:4vw;
+    }
+    div.imgbox img{
+        min-height: 175px;
+        max-height: 175px;
+    }
+    div.pad div.textbox h5{
+        font-size: 4vw;
+    }
+}
+
+@media(max-width:415px){
+    div.imgbox img{
+        min-height: 150px;
+        max-height: 150px;
+    }
+    div.pad div.textbox h5{
+        font-size: 3.75vw;
+    }
+}
+
