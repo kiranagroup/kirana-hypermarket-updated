@@ -185,6 +185,15 @@ export const Reducer = (state={user: null},action) =>{
         state={...state,'user':action.payLoad};
         return {...state};
     }
+    else if(action.type=='hidepane'){
+        if(state.pane=='found'){
+            state={...state,'pane':''};
+        }
+        else{
+            state={...state,'pane':'found'};
+        }
+        return {...state};
+    }
 
     return state;
 

@@ -7,7 +7,7 @@ import Searchbar from './Searchbar/searchbar';
 import './navbar.css';
 import Count from '../Cart/count';
 import Cart from '../Cart/cart';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import {Store} from '../../Models/Store';
 
 class Navbar extends Component{
@@ -70,7 +70,9 @@ class Navbar extends Component{
                     <h6>Sample Text</h6>
                 </div>
                 <div className="col-sm-0 col-2">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <i class="fa fa-bars" onClick={()=>{
+                            Store.dispatch({'type':'hidepane'})
+                        }} aria-hidden="true"></i>
                 </div>
                 <div className="col-sm-12 col-10 searchIt">
                     <Searchbar></Searchbar>

@@ -176,3 +176,17 @@ img.load{
     width: 15vh;
     margin-top: 15%;
 }
+
+@media(max-width:576px){
+    div.hidepane{
+        position: absolute;
+        left: -100%;
+        z-index: 9999;
+        background: white;
+        top:18%;
+        transition: 1s all ease;
+    }
+    div.hidepane.found{
+        left: 0% !important;
+    }
+}

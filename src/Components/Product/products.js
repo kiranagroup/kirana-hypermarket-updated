@@ -4,6 +4,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Product from './product';
 import Pane from '../searchPane/pane';
 import Pay from '../Pay/pay';
+import {connect} from 'react-redux';
 // import {baby} from '../../Categories/baby';
 // import {beverages} from '../../Categories/beverages';
 // import {breads} from '../../Categories/breads';
@@ -13,7 +14,7 @@ import Pay from '../Pay/pay';
 // import {personal} from '../../Categories/personal';
 // import {snacks} from '../../Categories/snacks';
 
-export default class Products extends Component{
+class Products extends Component{
     constructor(props){
         super(props);
         this.props=props;
@@ -102,10 +103,10 @@ export default class Products extends Component{
             <div>
                 <Pay></Pay>
                 <div className="row">
-                    <div className="col-lg-2 col-md-2" style={{padding:'0 0 0 2px'}}>
+                    <div className={this.props.class+" col-lg-2 col-md-2 col-sm-3 col-0 hidepane"} style={{padding:'0 0 0 2px'}}>
                         <Pane category={this.category}></Pane>
                     </div>
-                    <div className="col-lg-10 col-md-10">
+                    <div className="col-lg-10 col-md-10 col-sm-9 col-12">
                         <Product items={this.products} counter={this.state.count}></Product>
                         {show}
                     </div>
@@ -114,3 +115,13 @@ export default class Products extends Component{
         )
     }
 }
+
+const mapStateToProps=(state)=>{
+    if(state.Reducer.pane){
+        var pane=state.Reducer.pane;
+        return {'class':pane};
+    }
+    return {}
+}
+
+export default connect(mapStateToProps)(Products);
