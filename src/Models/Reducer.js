@@ -13,7 +13,7 @@ export const Reducer = (state={user: null},action) =>{
         var flag=0;
         if(state.added){
             for(var i=0;i<state.added.length;i++){
-                if(state.added[i].Product['Product_ID']===action.payLoad.Product.Product_ID){
+                if(state.added[i].Product['Product ID']===action.payLoad.Product['Product ID']){
                     state.added[i].value+=1;
                     state.count=parseInt(state.count)+1;
                     flag=1;
@@ -38,7 +38,7 @@ export const Reducer = (state={user: null},action) =>{
 // For subtracting products
     else if(action.type==='sub'){
         for(i=0;i<state.added.length;i++){
-            if(state.added[i].Product['Product_ID']===action.payLoad.Product.Product_ID){
+            if(state.added[i].Product['Product ID']===action.payLoad.Product['Product ID']){
                 if(state.added[i].value===1){
                     state.added.splice(i,1);
                     break;
@@ -85,7 +85,7 @@ export const Reducer = (state={user: null},action) =>{
     else if(action.type==='remove'){
         var obj = {}
         for(let i=0;i<state.added.length;i++){
-            if(state.added[i].Product['Product_ID']===action.payLoad.Product.Product.Product_ID){
+            if(state.added[i].Product['Product ID']===action.payLoad.Product.Product['Product ID']){
                 obj=state.added[i];
                 state.added.splice(i,1);
                 state.count=state.count-action.payLoad.Product.value;

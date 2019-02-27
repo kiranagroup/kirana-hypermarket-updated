@@ -28,7 +28,7 @@ export default class CartProducts extends Component{
                 <div className="row">
                     {this.props.markedItems.map((element)=>{
                         return(
-                            <div className="col-12 col-sm-12 cartProducts row" key={element.Product.Product_ID}>
+                            <div className="col-12 col-sm-12 cartProducts row" key={element.Product['Product ID']}>
                                 <div className="col-3 col-sm-3 imgparent">
                                     <img src={element.Product.Pic_URL} alt={element.Product.Brand}/>
                                 </div>

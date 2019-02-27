@@ -17,7 +17,16 @@ class Product extends Component{
     refresh(){
         this.setState({});
     }
+    TitleCase(str){
+        return str.replace(
+            /\w\S*/g,
+            function(txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            }
+        );
+    }
     render(){
+        console.log(this.items);
         this.countCheck=0;
         return(
             <div className="row">
@@ -28,21 +37,21 @@ class Product extends Component{
                     var button = <Add Obj={Obj} changed={this.refresh.bind(this)}></Add>;
                     if(this.props.added){
                     for(var i=0;i<this.props.added.length;i++){
-                            if(Obj.Product_ID===this.props.added[i].Product.Product_ID){
+                            if(Obj['Product ID']===this.props.added[i].Product['Product ID']){
                                 button=<Counter Obj={Obj} quant={this.props.added[i].value} changed={this.refresh.bind(this)}></Counter> 
                             }
                         }
                     }
                     this.countCheck++;
                     return(
-                        <div key={Obj.Product_ID} className="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div key={Obj['Product ID']} className="col-lg-3 col-md-4 col-sm-6 col-6">
                             <div className="box prod">
                                 <div className="imgbox">
                                     <img src={Obj.Pic_URL} alt=""/>
                                 </div>
                                 <div className="textbox prodtext">
-                                    <h5 className="gcol">{Obj.Brand}</h5>
-                                    <p className="extra">{Obj.Description}</p>
+                                    <h5 className="gcol">{this.TitleCase(Obj.Brand)}</h5>
+                                    <p className="extra">{this.TitleCase(Obj.Description)}</p>
                                     <p className="gcol">{Obj.Weight || 'Quantity'}</p>
                                     <div className="row last">
                                         <p className="col-sm-4 col-4 highlight">{Obj.Price || 'MRP'}</p>
